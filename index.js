@@ -10,6 +10,11 @@ app.post('/push', (req, res) => {
     console.log('request received');
     res.set('Content-Type', 'application/json');
 
+    var jsonString = '';
+    req.on('data', function(data){
+        jsonString += data;
+    });
+
     var hash = "sha1=" + crypto.createHmac('sha1', secret).update(jsonString).digest('hex');
     if(hash != req.headers['x-hub-signature']){
         console.log('invalid key');
