@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/cliche90/autopull_by_webhook_guide/issues"
   },
-  "homepage": "https://github.com/cliche90/autopull_by_webhook_guide#readme"
+  "homepage": "https://github.com/cliche90/autopull_by_webhook_guide#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
 }
