@@ -8,7 +8,6 @@ var port = 8081;
 
 app.post('/push', (req, res) => {
     console.log('request received');
-    res.status(400);
     res.set('Content-Type', 'application/json');
 
     var hash = "sha1=" + crypto.createHmac('sha1', secret).update(jsonString).digest('hex');
