@@ -1,0 +1,19 @@
+{
+  "name": "autopull_by_webhook_guide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cliche90/autopull_by_webhook_guide.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cliche90/autopull_by_webhook_guide/issues"
+  },
+  "homepage": "https://github.com/cliche90/autopull_by_webhook_guide#readme"
+}
