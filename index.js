@@ -10,13 +10,11 @@ app.post('/push', (req, res) => {
     console.log('request received');
     res.set('Content-Type', 'application/json');
 
-    var jsonString = '';
-    req.on('data', function(data){
-        jsonString += data;
-    });
+    var jsonString = req.body;
+    console.log('jsonString : ' + jsonString);
 
     console.log(req.headers['x-hub-signature']);
-    var hash = "rsa=" + crypto.createHmac('rsa', secret).update(jsonString).digest('hex');
+    var hash = "sha1=" + crypto.createHmac('sha1', secret).update(jsonString).digest('hex');
     if(hash != req.headers['x-hub-signature']){
         console.log('invalid key');
 	console.log(hash);
