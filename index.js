@@ -1,7 +1,10 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var spawn   = require('child_process').spawn;
 var crypto = require('crypto');
 var app = express();
+
+app.use(bodyParser.json());
 
 var secret = "amazingkey";
 var port = 8081;
@@ -10,7 +13,7 @@ app.post('/push', (req, res) => {
     console.log('request received');
     res.set('Content-Type', 'application/json');
 
-    var jsonString = req.params;
+    var jsonString = req.body;
     console.log('jsonString : ' + jsonString);
     var hash = "sha1=" + crypto.createHmac('sha1', secret).update(jsonString).digest('hex');
 
