@@ -12,10 +12,9 @@ app.post('/push', (req, res) => {
 
     var jsonString = req.params;
     console.log('jsonString : ' + jsonString);
-
-    console.log(req.headers['x-hub-signature']);
+    console.log(req.get('x-hub-signature'));
     var hash = "sha1=" + crypto.createHmac('sha1', secret).update(jsonString).digest('hex');
-    if(hash != req.headers['x-hub-signature']){
+    if(hash != req.get('x-hub-signature')){
         console.log('invalid key');
 	console.log(hash);
         var data = JSON.stringify({"error": "invalid key", key: hash});
