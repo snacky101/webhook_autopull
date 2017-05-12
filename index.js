@@ -10,7 +10,7 @@ app.post('/push', (req, res) => {
     console.log('request received');
     res.set('Content-Type', 'application/json');
 
-    var jsonString = req.body;
+    var jsonString = req.params;
     console.log('jsonString : ' + jsonString);
 
     console.log(req.headers['x-hub-signature']);
