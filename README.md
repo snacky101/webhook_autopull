@@ -1,6 +1,6 @@
 # Auto pull guide by github webhook
 
-> 아래의 포스팅과 깃을 참조하였으며, 리눅스를 기준으로 작성하였습니다.
+> 아래의 포스팅과 깃을 참조하였으며, 리눅스(CentOS) 서버를 기준으로 작성하였습니다.
 - [VELOPERT님 블로그](https://velopert.com/739)
 - [VELOPERT님 Git](https://github.com/velopert/nodejs-github-webhook/blob/master/index.js)
 
