@@ -11,7 +11,6 @@ let port = 8081;
 
 app.post('/push', (req, res) => {
     console.log('request received');
-    res.set('Content-Type', 'application/json');
 
     let jsonString = '';
     req.on('data', function (data) {
@@ -19,6 +18,7 @@ app.post('/push', (req, res) => {
     });
 
     req.on('end', function () {
+        res.set('Content-Type', 'application/json');
         console.log('jsonString : ' + jsonString);
         let hash = "sha1=" + crypto.createHmac('sha1', secret).update(jsonString).digest('hex');
 
@@ -38,7 +38,7 @@ app.post('/push', (req, res) => {
         });
 
         let data = JSON.stringify({ "success": true });
-        return res.status(200).end(data);
+        return res.end(data);
     });
 
 
