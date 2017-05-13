@@ -25,7 +25,7 @@ app.post('/push', (req, res) => {
         console.log('invalid key');
         console.log(hash);
         let data = JSON.stringify({ "error": "invalid key", key: hash });
-        res.status(400).send(data);
+        return res.end(data);
     }
 
     console.log("running hook.sh");
@@ -37,9 +37,8 @@ app.post('/push', (req, res) => {
     });
 
     let data = JSON.stringify({ "success": true });
-    return res.status(200).end(data);
-
-
+    console.log('success!!');
+    return res.end(data);
 });
 
 app.listen(port, () => console.log('listen to ' + port + ' port'));
