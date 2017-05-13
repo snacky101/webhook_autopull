@@ -1,3 +1,3 @@
 REPOSITORY="../autopull_by_webhook_guide"
-cd REPOSITORY
+cd $REPOSITORY
 git pull
