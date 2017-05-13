@@ -68,9 +68,9 @@
     npm install spawn
     npm install crypto
 
-> 이후에는 body-parser를 이용하여 들어온 data를 string으로 변환시켜 이 값을 sha1 알고리즘으로 hash code로 만들어 Request의 헤더에 담겨있는 `x-hub-signature`와 비교하시고 틀린 경우 에러를 리턴해 주시면 됩니다. 해당 과정은 아래와 같습니다. index.js 파일을 참고하시면 됩니다.
+> 이후에는 body-parser를 이용하여 data를 수신하고, 해당 data의 string 값을 sha1 알고리즘을 통해 hash code로 만든 후, Request의 헤더에 담겨있는 `x-hub-signature`와 비교하시고 틀린 경우 에러를 리턴해 주시면 됩니다. 해당 과정은 아래와 같습니다. index.js 파일을 참고하시면 됩니다.
 
-    let jsonString = '' + JSON.stringify(req.body)
+    let jsonString = JSON.stringify(req.body)
     let hash = 'sha1=' + crypto.createHmac('sha1', secret).update(jsonString).digest('hex');
 
     if (hash != req.get('x-hub-signature')){
