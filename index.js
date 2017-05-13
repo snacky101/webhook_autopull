@@ -14,6 +14,7 @@ app.post('/push', (req, res) => {
     res.status(400).set('Content-Type', 'application/json');
 
     let jsonString = '' + req.body;
+    console.log(jsonString);
     let hash = "sha1=" + crypto.createHmac('sha1', secret).update(jsonString).digest('hex');
 
     if (hash != req.get('x-hub-signature')) {

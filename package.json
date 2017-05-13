@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cliche90/autopull_by_webhook_guide#readme",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.15.2"
   }
 }
