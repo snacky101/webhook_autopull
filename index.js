@@ -38,7 +38,7 @@ app.post('/push', (req, res) => {
         });
 
         let data = JSON.stringify({ "success": true });
-        return res.end(data);
+        return res.status(200).end(data);
     });
 
 
