@@ -13,7 +13,7 @@ app.post('/push', (req, res) => {
     console.log('[LOG] request received');
     res.status(400).set('Content-Type', 'application/json');
 
-    let jsonString = req.body;
+    let jsonString = '' + req.body;
     let hash = "sha1=" + crypto.createHmac('sha1', secret).update(jsonString).digest('hex');
 
     if (hash != req.get('x-hub-signature')) {
