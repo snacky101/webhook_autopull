@@ -6,7 +6,7 @@ let app = express();
 
 app.use(bodyParser.json());
 
-let secret = "amazingkey";
+let secret = "secretkey";
 let port = 8081;
 
 app.post('/push', (req, res) => {

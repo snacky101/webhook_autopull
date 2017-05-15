@@ -22,7 +22,7 @@
 
 - 아래와 같은 방식으로 pull을 받고자 하는 디렉토리에 github repository를 clone 해 줍니다. 제 경우에는 현재 README.md 파일이 작성되고 있는 이 repository를 기준으로 작성하겠습니다.
 
-        git clone https://github.com/cliche90/autopull_by_webhook_guide.git
+        git clone https://github.com/cliche90/webhook_autopull.git
     
 ## hook.sh 파일 생성
 
@@ -31,7 +31,7 @@
 - hook.sh 파일에 해당 repository의 위치를 변수에 설정합니다. 제 레포지토리의 이름 그대로 디렉토리를 작성하였습니다.
 - 이후 해당 레포지토리로 이동하여 `git pull`을 받도록 처리합니다. REPOSITORY 변수의 경우는 원하시는 레포지토리로 설정하시면 됩니다.
 
-        REPOSITORY = "../autopull_by_webhook_guide"     // REPOSITORY 변수에 git pull 받고자 하는 repository 설정
+        REPOSITORY = "../webhook_autopull"     // REPOSITORY 변수에 git pull 받고자 하는 repository 설정
         cd $REPOSITORY      // 해당 디렉토리로 이동
         git pull            // git pull
 
@@ -39,8 +39,8 @@
 
 - 해당 내용을 듣고자 하는 포트와 Webhook에 적용할 Secret Key를 아래와 같이 index.js 파일에 작성합니다.
 
-    var secret = "secretkey";
-    var port = 8081;
+    let secret = "secretkey";
+    let port = 8081;
 
 ## Webhook 추가
 
