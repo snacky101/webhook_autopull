@@ -32,7 +32,7 @@ app.post('/push', (req, res) => {
 
     let data = JSON.stringify({ "success": true });
     console.log('[LOG] success!!');
-    return res.end(data);
+    return res.status(200).end(data);
 });
 
 app.listen(port, () => console.log('listen to ' + port + ' port'));
