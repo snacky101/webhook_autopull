@@ -65,7 +65,6 @@
 
     npm install express
     npm install body-parser
-    npm install spawn
     npm install crypto
 
 > 이후에는 아래의 내용을 수행합니다. 이하 내용은 index.js 파일을 참고하시면 됩니다.

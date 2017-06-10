@@ -6,8 +6,8 @@ let app = express();
 
 app.use(bodyParser.json());
 
-let secret = "secretkey";
-let port = 8081;
+let secret = "lotus_lantern#0614";
+let port = 8181;
 
 app.post('/push', (req, res) => {
     console.log('[LOG] request received');
@@ -32,7 +32,7 @@ app.post('/push', (req, res) => {
 
     let data = JSON.stringify({ "success": true });
     console.log('[LOG] success!!');
-    return res.end(data);
+    return res.status(200).end(data);
 });
 
 app.listen(port, () => console.log('listen to ' + port + ' port'));
